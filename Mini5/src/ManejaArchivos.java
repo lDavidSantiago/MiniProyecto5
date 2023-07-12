@@ -7,7 +7,7 @@ public class ManejaArchivos{
 
     public void leerArchivos(){
         try {
-            RandomAccessFile file = new RandomAccessFile("files\\archivo.txt","r");
+            RandomAccessFile file = new RandomAccessFile("Mini5\\files\\archivo.txt","r");
             String linea = "";
             while((linea = file.readLine())!=null){
                 System.out.println(linea);
@@ -24,7 +24,7 @@ public class ManejaArchivos{
 
     public void estarArchivos(){
         try {
-            RandomAccessFile file = new RandomAccessFile("files\\archivo.txt","rw");
+            RandomAccessFile file = new RandomAccessFile("Mini5\\files\\archivo.txt","rw");
             file.seek(file.length());
             file.writeBytes("\nSImon");
         } catch (FileNotFoundException e) {

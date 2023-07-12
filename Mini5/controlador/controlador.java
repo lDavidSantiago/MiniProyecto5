@@ -1,5 +1,5 @@
-package controlador;
+package Mini5.controlador;
 
-public class controlador {
+public class Controlador {
     
 }
