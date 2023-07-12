@@ -46,22 +46,19 @@ public class VistaListSuit extends JFrame {
         listCandyLabel.setBounds(40,10,210,40);
         listSuitPanel.add(listCandyLabel);
 
-        JLabel candyNameList = new JLabel("Name");
+        JLabel candyNameList = new JLabel("Name             Type            Material            Price");
         candyNameList.setFont(new Font ("Roboto Medium", 0, 14));
-        candyNameList.setBounds(40, 80, 150, 30);
+        candyNameList.setBounds(40, 80, 300, 30);
         listSuitPanel.add(candyNameList);
 
-        JLabel candyTypeList = new JLabel("Type");
-        candyTypeList.setFont(new Font ("Roboto Medium", 0, 14));
-        candyTypeList.setBounds(150, 80, 150, 30);
-        listSuitPanel.add(candyTypeList);
+        
 
         listCandiesTextArea = new JTextArea(); 
         listCandiesTextArea.setEditable(false); 
         
 
         JScrollPane scroll = new JScrollPane(listCandiesTextArea);
-        scroll.setBounds(40,115,150,200);
+        scroll.setBounds(40,115,300,200);
         listSuitPanel.add(scroll);
 
         listCandiesButton = new JButton("UPDATE");

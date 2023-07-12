@@ -44,15 +44,11 @@ public class VistaBuySuit extends JFrame {
         buySuitLabel.setBounds(40,10,210,40);
         buySuitPanel.add(buySuitLabel);
 
-        JLabel suitNameBuy = new JLabel("Name");
+        JLabel suitNameBuy = new JLabel("Suit");
         suitNameBuy.setFont(new Font ("Roboto Medium", 0, 14));
         suitNameBuy.setBounds(40, 80, 150, 30);
         buySuitPanel.add(suitNameBuy);
 
-        JLabel suitTypeBuy = new JLabel("Type");
-        suitTypeBuy.setFont(new Font ("Roboto Medium", 0, 14));
-        suitTypeBuy.setBounds(150, 80, 150, 30);
-        buySuitPanel.add(suitTypeBuy);
 
         //CAJA OPCIONES MULTIPLES
         JComboBox <String> combo1 = new JComboBox <String>();

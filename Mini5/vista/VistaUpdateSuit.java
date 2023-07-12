@@ -21,6 +21,9 @@ public class VistaUpdateSuit extends JFrame {
     public static JTextField oldNameTF;
     public static JTextField newNameTF;
     public static JTextField newTypeTF;
+    public static JTextField newMateriallTF;
+    public static JTextField newpricelTF;
+
     public static JButton suitCandyButton;
     public static JLabel suitOldName;
     public VistaUpdateSuit(){
@@ -51,77 +54,116 @@ public class VistaUpdateSuit extends JFrame {
 
         suitOldName = new JLabel("Name");
         suitOldName.setFont(new Font ("Roboto Medium", 0, 14));
-        suitOldName.setBounds(40, 80, 150, 30);
+        suitOldName.setBounds(40, 60, 150, 30);
         updateSuitPanel.add(suitOldName);
 
         oldNameTF = new JTextField();
         oldNameTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         oldNameTF.setForeground(new java.awt.Color(153, 153, 153));
         oldNameTF.setText("Suit´s old name");
-        oldNameTF.setBounds(40,115,250,20);
+        oldNameTF.setBounds(40,95,250,20);
         oldNameTF.setBorder(null);
         updateSuitPanel.add(oldNameTF);
 
         JSeparator separator3 = new JSeparator();
-        separator3.setBounds(40,135,250,10);
+        separator3.setBounds(40,115,250,10);
         separator3.setForeground(new Color(206,206,206));
         updateSuitPanel.add(separator3);
 
         JLabel suitNewName = new JLabel("New name");
         suitNewName.setFont(new Font ("Roboto Medium", 0, 14));
-        suitNewName.setBounds(40, 175, 150, 30);
+        suitNewName.setBounds(40, 125, 150, 30);
         updateSuitPanel.add(suitNewName);
 
         newNameTF = new JTextField();
         newNameTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         newNameTF.setForeground(new java.awt.Color(153, 153, 153));
         newNameTF.setText("Suit's new name");
-        newNameTF.setBounds(40,210,250,20);
+        newNameTF.setBounds(40,160,250,20);
         newNameTF.setBorder(null);
         updateSuitPanel.add(newNameTF);
 
         JSeparator separator4 = new JSeparator();
-        separator4.setBounds(40,230,250,10);
+        separator4.setBounds(40,180,250,10);
         separator4.setForeground(new Color(206,206,206));
         updateSuitPanel.add(separator4);
 
         ////////////////////////////////////
 
-        JLabel suitNewType = new JLabel("New Type");
-        suitNewType.setFont(new Font ("Roboto Medium", 0, 14));
-        suitNewType.setBounds(40, 265, 150, 30);
-        updateSuitPanel.add(suitNewType);
+        JLabel suitNewCountry = new JLabel("New Country");
+        suitNewCountry.setFont(new Font ("Roboto Medium", 0, 14));
+        suitNewCountry.setBounds(40, 190, 150, 30);
+        updateSuitPanel.add(suitNewCountry);
 
         newTypeTF = new JTextField();
         newTypeTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         newTypeTF.setForeground(new java.awt.Color(153, 153, 153));
-        newTypeTF.setText("Suit's new type");
-        newTypeTF.setBounds(40,300,250,20);
+        newTypeTF.setText("Suit's new country");
+        newTypeTF.setBounds(40,225,250,20);
         newTypeTF.setBorder(null);
         updateSuitPanel.add(newTypeTF);
 
         JSeparator separator5 = new JSeparator();
-        separator5.setBounds(40,320,250,10);
+        separator5.setBounds(40,245,250,10);
         separator5.setForeground(new Color(206,206,206));
         updateSuitPanel.add(separator5);
+        
+        JLabel suitNewMaterial = new JLabel("New Material");
+        suitNewMaterial.setFont(new Font ("Roboto Medium", 0, 14));
+        suitNewMaterial.setBounds(40, 255, 150, 30);
+        updateSuitPanel.add(suitNewMaterial);
+
+        newMateriallTF = new JTextField();
+        TextPrompt materialTF_ = new TextPrompt("Suit's new material",newMateriallTF);
+        newMateriallTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        newMateriallTF.setForeground(new java.awt.Color(153, 153, 153));
+        newMateriallTF.setBounds(40,290,250,20);
+        newMateriallTF.setBorder(null);
+        updateSuitPanel.add(newMateriallTF);
+
+        JSeparator separator6= new JSeparator();
+        separator6.setBounds(40,310,250,10);
+        separator6.setForeground(new Color(206,206,206));
+        updateSuitPanel.add(separator6);
+
+        ///
+
+        JLabel suitPrice = new JLabel("New Price");
+        suitPrice.setFont(new Font ("Roboto Medium", 0, 14));
+        suitPrice.setBounds(40, 320, 150, 30);
+        updateSuitPanel.add(suitPrice);
+
+        newpricelTF = new JTextField();
+        TextPrompt newpricelTF_ = new TextPrompt("Suit's new price",newpricelTF);
+        newpricelTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        newpricelTF.setForeground(new java.awt.Color(153, 153, 153));
+        newpricelTF.setBounds(40,355,250,20);
+        newpricelTF.setBorder(null);
+        updateSuitPanel.add(newpricelTF);
+
+        JSeparator separator7 = new JSeparator();
+        separator7.setBounds(40,375,250,10);
+        separator7.setForeground(new Color(206,206,206));
+        updateSuitPanel.add(separator7);
+
         
 
         suitCandyButton = new JButton("UPDATE");
         suitCandyButton.setForeground(Color.white);
         suitCandyButton.setBackground(new Color(0,51,116));
-        suitCandyButton.setBounds(40, 355, 120, 30);
+        suitCandyButton.setBounds(40, 385, 120, 30);
         updateSuitPanel.add(suitCandyButton);
 
         JButton backButton3 = new JButton("BACK");
         backButton3.setForeground(Color.white);
         backButton3.setBackground(new Color(0,51,116));
-        backButton3.setBounds(200, 355, 120, 30);
+        backButton3.setBounds(200, 385, 120, 30);
         botonVolver(backButton3);
         updateSuitPanel.add(backButton3); 
 
         updateSuitPanel.setVisible(true);
         panelBackground2.add(updateSuitPanel);
-        updateSuitPanel.setBounds(115,30,430,400);
+        updateSuitPanel.setBounds(100,15,430,430);
         updateSuitPanel.setBackground(new Color(211,211,211));
         panelBackground2.setBackground(new Color(0,51,116));
         panelBackground2.setVisible(true);

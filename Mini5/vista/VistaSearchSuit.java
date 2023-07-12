@@ -50,7 +50,7 @@ public class VistaSearchSuit extends JFrame {
         searchSuitPanel.add(suitNameSearch);
 
         nameSearchTF = new JTextField();
-        TextPrompt nameTF_ = new TextPrompt("Suit name",nameSearchTF);
+        TextPrompt nameTF_ = new TextPrompt("Suit Country",nameSearchTF);
         nameSearchTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         nameSearchTF.setForeground(new java.awt.Color(153, 153, 153));
         nameSearchTF.setText("Suit's name you want to search");
@@ -58,7 +58,7 @@ public class VistaSearchSuit extends JFrame {
         nameSearchTF.setBorder(null);
         searchSuitPanel.add(nameSearchTF);
 
-        JLabel suitType = new JLabel("Type");
+        JLabel suitType = new JLabel("Country");
         suitType.setFont(new Font ("Roboto Medium", 0, 14));
         suitType.setBounds(40, 170, 150, 30);
         searchSuitPanel.add(suitType);
@@ -66,7 +66,7 @@ public class VistaSearchSuit extends JFrame {
         typeTF1 = new JTextField();
         typeTF1.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         typeTF1.setForeground(new java.awt.Color(153, 153, 153));
-        TextPrompt TypeTF_ = new TextPrompt("Suit Type",typeTF1);
+        TextPrompt TypeTF_ = new TextPrompt("Suit Country",typeTF1);
         typeTF1.setBounds(40,205,250,20);
         typeTF1.setBorder(null);
         searchSuitPanel.add(typeTF1);
