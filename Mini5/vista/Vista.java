@@ -116,23 +116,27 @@ public class Vista extends JFrame{
         switch (opcion){
             case 1:
                 Vista.interfaz1.setVisible(false);
-                //VistaAddCandy.vista2.setVisible(true);
+                VistaAddSuit.interfazAdd.setVisible(true);
                 break;
             case 2:
                 Vista.interfaz1.setVisible(false);
-                //VistaUpdateCandy.vista3.setVisible(true);
+                VistaUpdateSuit.interfazUpdate.setVisible(true);
                 break;
             case 3:
                 Vista.interfaz1.setVisible(false);
-                //VistaDeleteCandy.vista4.setVisible(true);
+                VistaDeleteSuit.vistaDelete.setVisible(true);
                 break;
             case 4:
                 Vista.interfaz1.setVisible(false);
-                //VistaSearchCandy.vista5.setVisible(true);
+                VistaSearchSuit.vista5.setVisible(true);
                 break;
             case 5:
                 Vista.interfaz1.setVisible(false);
-                //VistaListCandies.vista6.setVisible(true);
+                VistaListSuit.vista6.setVisible(true);
+                break;
+            case 6:
+                Vista.interfaz1.setVisible(false);
+                VistaBuySuit.vistaBuy.setVisible(true);
                 break;
 
             default:

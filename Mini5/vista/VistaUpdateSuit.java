@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import Mini5.controlador.Controlador;
 
 public class VistaUpdateSuit extends JFrame {
-    static VistaUpdateSuit vista3 = new VistaUpdateSuit();
+    static VistaUpdateSuit interfazUpdate = new VistaUpdateSuit();
     public static JTextField oldNameTF;
     public static JTextField newNameTF;
     public static JTextField newTypeTF;
@@ -131,7 +131,7 @@ public class VistaUpdateSuit extends JFrame {
     public void botonVolver(JButton boton) {
         ActionListener d = new ActionListener() {
             public void actionPerformed(ActionEvent ae){
-                vista3.setVisible(false);
+                interfazUpdate.setVisible(false);
                 Vista.interfaz1.setVisible(true);
             }
         };
