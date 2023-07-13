@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import Mini5.controlador.ManejaArchivos;
 public class ModeloTrajes{
 
     private String suitName;
@@ -11,6 +12,9 @@ public class ModeloTrajes{
     private String materialSuit;
     private int suitPrice;
     public static ArrayList<ModeloTrajes> models = new ArrayList<ModeloTrajes>();
+    ManejaArchivos manejador = new ManejaArchivos();
+
+    
     public String getSuitName() {
         return suitName;
     }
@@ -52,22 +56,37 @@ public class ModeloTrajes{
     public ModeloTrajes() {
     }
     public void addNewSuit(String suitName, String countrySuitName, String materialSuit, int suitPrice) {
+        int i = 0;
+        StringBuilder result = new StringBuilder();  
         ModeloTrajes traje = new ModeloTrajes(suitName, countrySuitName, materialSuit, suitPrice);
         models.add(traje);
         System.out.println(traje.getSuitName());
+        result.append("Nombre: ").append(models.get(i).getSuitName()).append(", Pais de Fabricacion: ").append(models.get(i).getCountrySuitName()).append(", Material: ").append(models.get(i).getMaterialSuit()).append(", Precio: ").append(models.get(i).getSuitPrice()).append("\n");
+        manejador.escribirArchivos(result.toString(), i);
+        manejador.leerArchivos();
+        i++;
     }
 
+ 
+
     public void removeSuit(String suitName){
+        int i = 0;
+
         ModeloTrajes trajeremover = null;
         for(ModeloTrajes traje : models){
             if(traje.getSuitName().equals(suitName)){
                 trajeremover = traje;
                 break;
             }
+            i++;
+        
         }
         if(trajeremover != null){
-        models.remove(trajeremover);
-        System.out.println("traje eliminado: " + trajeremover.getSuitName());
+            models.remove(trajeremover);
+            System.out.println("traje eliminado: " + trajeremover.getSuitName());
+            manejador.deleteArchivos(i);
+            manejador.leerArchivos();
+            
         }
         else{
             System.out.println("NO SE ENCONTRO EL TRAJE POR EL NOMBRE");
@@ -75,12 +94,19 @@ public class ModeloTrajes{
     }
 
     public String updateSuit(String suitName,String newSuitName, String newCountrySuitName, String newMaterialSuit, int newSuitPrice){
+        int i = 0;
+        StringBuilder result = new StringBuilder();
+        
+        
         ModeloTrajes suitToUpdate = null;
         for(ModeloTrajes traje : models){
+            
             if(traje.getSuitName().equals(suitName)){
                 suitToUpdate = traje;
+
                 break;
             }
+            i++;
         }
     
         if(suitToUpdate != null){
@@ -88,6 +114,9 @@ public class ModeloTrajes{
             suitToUpdate.setCountrySuitName(newCountrySuitName);
             suitToUpdate.setMaterialSuit(newMaterialSuit);
             suitToUpdate.setSuitPrice(newSuitPrice);
+            result.append("Nombre: ").append(models.get(i).getSuitName()).append(", Pais de Fabricacion: ").append(models.get(i).getCountrySuitName()).append(", Material: ").append(models.get(i).getMaterialSuit()).append(", Precio: ").append(models.get(i).getSuitPrice()).append("\n");
+            manejador.updateArchivos(result.toString(), i);
+            manejador.leerArchivos();
             return " " ;
         }
         
@@ -101,6 +130,7 @@ public class ModeloTrajes{
         StringBuilder result = new StringBuilder();  
         for(int i = 0; i <models.size(); i++){
             result.append("Nombre: ").append(models.get(i).getSuitName()).append(", Pais de Fabricacion: ").append(models.get(i).getMaterialSuit()).append(", Material: ").append(models.get(i).getMaterialSuit()).append(", Precio: ").append(models.get(i).getSuitPrice()).append("\n");
+
         }
         return result.toString();
     }
@@ -112,7 +142,7 @@ public class ModeloTrajes{
             if(traje.getSuitName().equals(suitName)&& traje.getCountrySuitName().equals(suitCountry)){
                 suitFinded = traje;
                 break;}
-       i++;
+        i++;
         }
         if(suitFinded != null){
             JOptionPane.showMessageDialog(null,"Traje encontrado: " + " Nombre: " + suitFinded.getSuitName() + ", Pais: " + suitFinded.getCountrySuitName() + ", Material: " + suitFinded.getMaterialSuit() + ", Precio: " + suitFinded.getSuitPrice());
