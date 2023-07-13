@@ -20,11 +20,11 @@ public class VistaUpdateSuit extends JFrame {
     static VistaUpdateSuit interfazUpdate = new VistaUpdateSuit();
     public static JTextField oldNameTF;
     public static JTextField newNameTF;
-    public static JTextField newTypeTF;
-    public static JTextField newMateriallTF;
+    public static JTextField newCountryTf;
+    public static JTextField newMaterealTF;
     public static JTextField newpricelTF;
 
-    public static JButton suitCandyButton;
+    public static JButton suitUpdateButton;
     public static JLabel suitOldName;
     public VistaUpdateSuit(){
         setTitle("Trajes Fuap");
@@ -95,13 +95,12 @@ public class VistaUpdateSuit extends JFrame {
         suitNewCountry.setBounds(40, 190, 150, 30);
         updateSuitPanel.add(suitNewCountry);
 
-        newTypeTF = new JTextField();
-        newTypeTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        newTypeTF.setForeground(new java.awt.Color(153, 153, 153));
-        newTypeTF.setText("Suit's new country");
-        newTypeTF.setBounds(40,225,250,20);
-        newTypeTF.setBorder(null);
-        updateSuitPanel.add(newTypeTF);
+        newCountryTf = new JTextField("AAAAAAAAAAAAAAAA");
+        newCountryTf.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        newCountryTf.setForeground(new java.awt.Color(153, 153, 153));
+        newCountryTf.setBounds(40,225,250,20);
+        newCountryTf.setBorder(null);
+        updateSuitPanel.add(newCountryTf);
 
         JSeparator separator5 = new JSeparator();
         separator5.setBounds(40,245,250,10);
@@ -113,13 +112,13 @@ public class VistaUpdateSuit extends JFrame {
         suitNewMaterial.setBounds(40, 255, 150, 30);
         updateSuitPanel.add(suitNewMaterial);
 
-        newMateriallTF = new JTextField();
-        TextPrompt materialTF_ = new TextPrompt("Suit's new material",newMateriallTF);
-        newMateriallTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        newMateriallTF.setForeground(new java.awt.Color(153, 153, 153));
-        newMateriallTF.setBounds(40,290,250,20);
-        newMateriallTF.setBorder(null);
-        updateSuitPanel.add(newMateriallTF);
+        newMaterealTF = new JTextField();
+        TextPrompt materialTF_ = new TextPrompt("Suit's new material",newMaterealTF);
+        newMaterealTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        newMaterealTF.setForeground(new java.awt.Color(153, 153, 153));
+        newMaterealTF.setBounds(40,290,250,20);
+        newMaterealTF.setBorder(null);
+        updateSuitPanel.add(newMaterealTF);
 
         JSeparator separator6= new JSeparator();
         separator6.setBounds(40,310,250,10);
@@ -133,7 +132,7 @@ public class VistaUpdateSuit extends JFrame {
         suitPrice.setBounds(40, 320, 150, 30);
         updateSuitPanel.add(suitPrice);
 
-        newpricelTF = new JTextField();
+        newpricelTF = new JTextField("precio");
         TextPrompt newpricelTF_ = new TextPrompt("Suit's new price",newpricelTF);
         newpricelTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         newpricelTF.setForeground(new java.awt.Color(153, 153, 153));
@@ -148,11 +147,11 @@ public class VistaUpdateSuit extends JFrame {
 
         
 
-        suitCandyButton = new JButton("UPDATE");
-        suitCandyButton.setForeground(Color.white);
-        suitCandyButton.setBackground(new Color(0,51,116));
-        suitCandyButton.setBounds(40, 385, 120, 30);
-        updateSuitPanel.add(suitCandyButton);
+        suitUpdateButton = new JButton("UPDATE");
+        suitUpdateButton.setForeground(Color.white);
+        suitUpdateButton.setBackground(new Color(0,51,116));
+        suitUpdateButton.setBounds(40, 385, 120, 30);
+        updateSuitPanel.add(suitUpdateButton);
 
         JButton backButton3 = new JButton("BACK");
         backButton3.setForeground(Color.white);
@@ -179,15 +178,23 @@ public class VistaUpdateSuit extends JFrame {
         };
         boton.addActionListener(d);
     }
-    public static String getNewCandyName(){
-        return newNameTF.getText();
-    }
-    public static String getOldCandyName(){
+    public static String getOldCSuitName(){
         return oldNameTF.getText();
     }
-    public static String getNewCandyType(){
-        return newTypeTF.getText();
+    public static String getNewSuitName(){
+        return newNameTF.getText();
     }
+    
+    public static String getNewCountrySuit(){
+        return newCountryTf.getText();
+    }
+    public static String getNewMaterial(){
+        return newMaterealTF.getText();
+    }
+    public static int getNewSuitPrice(){
+        return Integer.parseInt(newpricelTF.getText());
+    }
+
 
     /*public void start(Controlador controlador) {
         controlador.setOperations(Operations.ADD);

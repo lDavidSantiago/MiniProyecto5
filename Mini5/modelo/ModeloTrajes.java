@@ -2,12 +2,14 @@ package Mini5.modelo;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class ModeloTrajes{
 
     private String suitName;
     private String countrySuitName;
     private String materialSuit;
-    private float suitPrice;
+    private int suitPrice;
     private static ArrayList<ModeloTrajes> models = new ArrayList<ModeloTrajes>();
     public String getSuitName() {
         return suitName;
@@ -33,21 +35,23 @@ public class ModeloTrajes{
     public void setMaterialSuit(String materialSuit) {
         this.materialSuit = materialSuit;
     }
-    public float getSuitPrice() {
+    public int getSuitPrice() {
         return suitPrice;
     }
-    public void setSuitPrice(float suitPrice) {
+    public void setSuitPrice(int suitPrice) {
         this.suitPrice = suitPrice;
     }
     
-    public ModeloTrajes(String suitName, String countrySuitName, String materialSuit, float suitPrice) {
+    public ModeloTrajes(String suitName, String countrySuitName, String materialSuit, int suitPrice) {
         this.suitName = suitName;
         this.countrySuitName = countrySuitName;
         this.materialSuit = materialSuit;
         this.suitPrice = suitPrice;
     }
 
-    public void addNewSuit(String suitName, String countrySuitName, String materialSuit, float suitPrice) {
+    public ModeloTrajes() {
+    }
+    public void addNewSuit(String suitName, String countrySuitName, String materialSuit, int suitPrice) {
         ModeloTrajes traje = new ModeloTrajes(suitName, countrySuitName, materialSuit, suitPrice);
         models.add(traje);
         System.out.println(traje.getSuitName());
@@ -70,7 +74,7 @@ public class ModeloTrajes{
         }
     }
 
-    public String updateSuit(String suitName,String newSuitName, String newCountrySuitName, String newMaterialSuit, float newSuitPrice){
+    public String updateSuit(String suitName,String newSuitName, String newCountrySuitName, String newMaterialSuit, int newSuitPrice){
         ModeloTrajes suitToUpdate = null;
         for(ModeloTrajes traje : models){
             if(traje.getSuitName().equals(suitName)){
@@ -84,7 +88,7 @@ public class ModeloTrajes{
             suitToUpdate.setCountrySuitName(newCountrySuitName);
             suitToUpdate.setMaterialSuit(newMaterialSuit);
             suitToUpdate.setSuitPrice(newSuitPrice);
-            return "Traje actualizado: " + suitName + " ahora es" + suitToUpdate.getSuitName() + " " + suitToUpdate.getCountrySuitName() + " " + suitToUpdate.getMaterialSuit() + " " + suitToUpdate.getSuitPrice();
+            return " " ;
         }
         
         else {
@@ -101,6 +105,22 @@ public class ModeloTrajes{
         return result.toString();
     }
 
-    
+    public String searchSuit(String suitName, String suitCountry){
+        ModeloTrajes suitFinded = null;
+       int i = 0;
+       for(ModeloTrajes traje : models){
+            if(traje.getSuitName().equals(suitName)&& traje.getCountrySuitName().equals(suitCountry)){
+                suitFinded = traje;
+                break;}
+       i++;
+        }
+        if(suitFinded != null){
+            JOptionPane.showMessageDialog(null,"Traje encontrado: " + " Nombre: " + suitFinded.getSuitName() + ", Pais: " + suitFinded.getCountrySuitName() + ", Material: " + suitFinded.getMaterialSuit() + ", Precio: " + suitFinded.getSuitPrice());
+            return " ";
+        }
+        else{
+           return "no encontre xd";
+        }
 
+    }
 }

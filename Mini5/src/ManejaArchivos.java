@@ -14,10 +14,8 @@ public class ManejaArchivos{
             }
         
         } catch (FileNotFoundException e) {
-            // TODO: handle exception
             e.printStackTrace();
         }catch (IOException e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
     }
@@ -28,10 +26,8 @@ public class ManejaArchivos{
             file.seek(file.length());
             file.writeBytes("\nSImon");
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

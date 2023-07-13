@@ -1,7 +1,6 @@
 package Mini5.vista;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -12,7 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-public class Vista extends JFrame{
+import Mini5.controlador.Controlador;
+
+public class Vista extends JFrame implements VistaSuits {
  public static JTextField jTextField1;
     public static JButton botonFrames;
     public static int opcionNumerito;
@@ -20,7 +21,7 @@ public class Vista extends JFrame{
     
     public Vista(){
         setTitle("Trajes Fuap");
-        setSize(670, 535);
+        setSize(670, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null); 
@@ -135,7 +136,6 @@ public class Vista extends JFrame{
                 VistaListSuit.vista6.setVisible(true);
                 break;
             case 6:
-                Vista.interfaz1.setVisible(false);
                 VistaBuySuit.vistaBuy.setVisible(true);
                 break;
 
@@ -153,6 +153,75 @@ public class Vista extends JFrame{
     public static void main(String[] args) {
         Vista frame = new Vista();
         frame.setVisible(true);
+    }
+
+    @Override
+    public void start(Controlador controlador) {
+        VistaAddSuit.addSuitButton.addActionListener(controlador);
+        VistaDeleteSuit.deleteSuitButton.addActionListener(controlador);
+        VistaListSuit.listCandiesButton.addActionListener(controlador);
+        VistaUpdateSuit.suitUpdateButton.addActionListener(controlador);
+        VistaSearchSuit.searchSuitButton.addActionListener(controlador);
+        setLocationRelativeTo(null);
+        interfaz1.setVisible(true);
+    }
+
+    
+    public String getSuitName() {
+        return VistaAddSuit.getSuitName();
+    }
+
+    
+    public String getSuitCountry() {
+        return VistaAddSuit.getSuitCountry();
+    }
+
+  
+    public String getSuitMaterial() {
+        return VistaAddSuit.getSuitMaterial();
+    }
+
+   
+    public int getSuitPrice() {
+        return VistaAddSuit.getSuitPrice();
+    }
+
+    @Override
+    public String getCandyNameToDelete() {
+        return VistaDeleteSuit.getCandyNameToDelete();
+    }
+
+    @Override
+    public String searchSuitName() {
+       return VistaSearchSuit.getSuitName();
+    }
+    public String searchSuitCountry(){
+        return VistaSearchSuit.getSuitCountry();
+    }
+
+    @Override
+    public String oldSuitName() {
+        return VistaUpdateSuit.getOldCSuitName();
+    }
+
+    @Override
+    public String newSuitName() {
+        return VistaUpdateSuit.getNewSuitName();
+    }
+
+    @Override
+    public String newSuitCountry() {
+        return VistaUpdateSuit.getNewCountrySuit();
+    }
+
+    @Override
+    public String newSuitMateral() {
+        return VistaUpdateSuit.getNewMaterial();
+    }
+
+    @Override
+    public int newSuitPrice() {
+        return VistaUpdateSuit.getNewSuitPrice();
     }
     
 }

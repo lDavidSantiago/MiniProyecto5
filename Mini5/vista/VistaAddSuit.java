@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,6 +17,8 @@ public class VistaAddSuit extends JFrame{
     static VistaAddSuit interfazAdd = new VistaAddSuit();
     public static JTextField pricelTF;
     public static JTextField countryTF;
+    public static JTextField nameTF;
+    public static JTextField materialTF;
     public static JButton backButton;
     public static JButton addSuitButton;
     public VistaAddSuit(){
@@ -53,13 +54,13 @@ public class VistaAddSuit extends JFrame{
         suitName.setBounds(40, 80, 150, 30);
         addSuitPanel.add(suitName);
 
-        pricelTF = new JTextField();
-        TextPrompt nameTF_ = new TextPrompt("Suit name",pricelTF);
-        pricelTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        pricelTF.setForeground(new java.awt.Color(153, 153, 153));
-        pricelTF.setBounds(40,115,250,20);
-        pricelTF.setBorder(null);
-        addSuitPanel.add(pricelTF);
+        nameTF = new JTextField();
+        TextPrompt nameTF_ = new TextPrompt("Suit name",nameTF);
+        nameTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        nameTF.setForeground(new java.awt.Color(153, 153, 153));
+        nameTF.setBounds(40,115,250,20);
+        nameTF.setBorder(null);
+        addSuitPanel.add(nameTF);
 
         JSeparator separator1 = new JSeparator();
         separator1.setBounds(40,135,250,10);
@@ -89,13 +90,13 @@ public class VistaAddSuit extends JFrame{
         suitMaterial.setBounds(40, 200, 150, 30);
         addSuitPanel.add(suitMaterial);
 
-        pricelTF = new JTextField();
-        TextPrompt materialTF_ = new TextPrompt("Suit's material",pricelTF);
-        pricelTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        pricelTF.setForeground(new java.awt.Color(153, 153, 153));
-        pricelTF.setBounds(40,230,250,20);
-        pricelTF.setBorder(null);
-        addSuitPanel.add(pricelTF);
+        materialTF = new JTextField();
+        TextPrompt materialTF_ = new TextPrompt("Suit's material",materialTF);
+        materialTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        materialTF.setForeground(new java.awt.Color(153, 153, 153));
+        materialTF.setBounds(40,230,250,20);
+        materialTF.setBorder(null);
+        addSuitPanel.add(materialTF);
 
         JSeparator separator3 = new JSeparator();
         separator3.setBounds(40,250,250,10);
@@ -162,12 +163,18 @@ public class VistaAddSuit extends JFrame{
         VistaAddSuit frame2 = new VistaAddSuit();
         frame2.setVisible(true);
     }
-    public static String getCandyName() {
-        return pricelTF.getText();
+    public static String getSuitName() {
+        return nameTF.getText();
     }
-    public static String getCandyType(){
+    public static String getSuitCountry(){
         return countryTF.getText();
     }
-
+    public static String getSuitMaterial(){
+        return materialTF.getText();
+    }
+    public static  int getSuitPrice(){
+        return Integer.parseInt(pricelTF.getText());
+    }
+    
 }
 

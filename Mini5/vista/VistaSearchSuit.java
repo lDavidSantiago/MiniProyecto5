@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,13 +11,12 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-import Mini5.controlador.Controlador;
 
 public class VistaSearchSuit extends JFrame {
     static VistaSearchSuit vista5 = new VistaSearchSuit();
     public static JTextField nameSearchTF;
     public static JButton searchSuitButton;
-    public static JTextField typeTF1;
+    public static JTextField countrySuitTF;
     public VistaSearchSuit(){
         setTitle("Trajes Fuap");
         setSize(670, 500);
@@ -63,13 +61,13 @@ public class VistaSearchSuit extends JFrame {
         suitType.setBounds(40, 170, 150, 30);
         searchSuitPanel.add(suitType);
 
-        typeTF1 = new JTextField();
-        typeTF1.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        typeTF1.setForeground(new java.awt.Color(153, 153, 153));
-        TextPrompt TypeTF_ = new TextPrompt("Suit Country",typeTF1);
-        typeTF1.setBounds(40,205,250,20);
-        typeTF1.setBorder(null);
-        searchSuitPanel.add(typeTF1);
+        countrySuitTF = new JTextField();
+        countrySuitTF.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        countrySuitTF.setForeground(new java.awt.Color(153, 153, 153));
+        TextPrompt TypeTF_ = new TextPrompt("Suit Country",countrySuitTF);
+        countrySuitTF.setBounds(40,205,250,20);
+        countrySuitTF.setBorder(null);
+        searchSuitPanel.add(countrySuitTF);
 
         JSeparator separator2 = new JSeparator();
         separator2.setBounds(40,225,250,10);
@@ -123,5 +121,12 @@ public class VistaSearchSuit extends JFrame {
     public static void main(String[] args) {
         VistaSearchSuit frame5 = new VistaSearchSuit();
         frame5.setVisible(true);
+    }
+
+    public static String getSuitName(){
+        return nameSearchTF.getText();
+    }
+    public static String getSuitCountry(){
+        return countrySuitTF.getText();
     }
 }

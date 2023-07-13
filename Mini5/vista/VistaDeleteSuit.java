@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,7 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-import Mini5.controlador.Controlador;
 
 public class VistaDeleteSuit extends JFrame {
     static VistaDeleteSuit vistaDelete = new VistaDeleteSuit();
@@ -99,7 +97,7 @@ public class VistaDeleteSuit extends JFrame {
         boton.addActionListener(d);
     }
 
-    public static String getCandyName(){
+    public static String getCandyNameToDelete(){
         return nameDeleteTF.getText();
     }
     /*public void start(Controlador controlador) {
