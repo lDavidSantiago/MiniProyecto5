@@ -14,8 +14,8 @@ import javax.swing.JTextArea;
 
 public class VistaListSuit extends JFrame {
     static VistaListSuit vista6 = new VistaListSuit();
-    public static JTextArea listCandiesTextArea;
-    public static JButton listCandiesButton;
+    public static JTextArea listSuitsTextArea;
+    public static JButton listSuitButton;
     public VistaListSuit(){
         setTitle("Trajes Fuap");
         setSize(670, 500);
@@ -49,19 +49,19 @@ public class VistaListSuit extends JFrame {
 
         
 
-        listCandiesTextArea = new JTextArea(); 
-        listCandiesTextArea.setEditable(false); 
+        listSuitsTextArea = new JTextArea(); 
+        listSuitsTextArea.setEditable(false); 
         
 
-        JScrollPane scroll = new JScrollPane(listCandiesTextArea);
+        JScrollPane scroll = new JScrollPane(listSuitsTextArea);
         scroll.setBounds(40,115,300,200);
         listSuitPanel.add(scroll);
 
-        listCandiesButton = new JButton("UPDATE");
-        listCandiesButton.setForeground(Color.white);
-        listCandiesButton.setBackground(new Color(0,51,116));
-        listCandiesButton.setBounds(40, 350, 120, 30);
-        listSuitPanel.add(listCandiesButton);
+        listSuitButton = new JButton("UPDATE");
+        listSuitButton.setForeground(Color.white);
+        listSuitButton.setBackground(new Color(0,51,116));
+        listSuitButton.setBounds(40, 350, 120, 30);
+        listSuitPanel.add(listSuitButton);
 
         JButton backButton5 = new JButton("BACK");
         backButton5.setForeground(Color.white);

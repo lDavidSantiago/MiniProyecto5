@@ -14,10 +14,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import Mini5.modelo.ModeloTrajes;
 public class VistaBuySuit extends JFrame {
     static VistaBuySuit vistaBuy = new VistaBuySuit();
     public static JTextArea buySuitTextArea;
     public static JButton buySuitButton;
+    public static JPanel buySuitPanel;
+    public static JComboBox <String> combo1;
     public VistaBuySuit(){
         setTitle("Trajes Fuap");
         setSize(670, 500);
@@ -30,7 +34,7 @@ public class VistaBuySuit extends JFrame {
         panelBackground6.setLayout(null);
         panelBackground6.setSize(670, 459);
 
-        JPanel buySuitPanel = new JPanel();
+        buySuitPanel = new JPanel();
         buySuitPanel.setLayout(null);
         buySuitPanel.setSize(430, 400);
         buySuitPanel.setBackground(new Color(255, 255, 255));
@@ -53,8 +57,8 @@ public class VistaBuySuit extends JFrame {
         //CAJA OPCIONES MULTIPLES
         JComboBox <String> combo1 = new JComboBox <String>();
         combo1.setBounds(40,115,150,30);
-     
         buySuitPanel.add(combo1);
+        addCombo();
 
         ////
 
@@ -105,7 +109,11 @@ public class VistaBuySuit extends JFrame {
         boton.addActionListener(d);
     }
 
-
+    public static void addCombo(){
+        for(ModeloTrajes traje : ModeloTrajes.models){
+            combo1.addItem(traje.getSuitName());
+        }
+    }
 
 
 

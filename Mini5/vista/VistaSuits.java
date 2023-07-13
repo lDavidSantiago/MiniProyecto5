@@ -29,4 +29,6 @@ public interface VistaSuits {
     public String newSuitMateral();
 
     public int newSuitPrice();
+
+public void setList(String lista);
 }

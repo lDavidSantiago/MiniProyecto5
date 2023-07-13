@@ -25,7 +25,7 @@ public class VistaUpdateSuit extends JFrame {
     public static JTextField newpricelTF;
 
     public static JButton suitUpdateButton;
-    public static JLabel suitOldName;
+    public JLabel suitOldName;
     public VistaUpdateSuit(){
         setTitle("Trajes Fuap");
         setSize(670, 500);
@@ -95,7 +95,7 @@ public class VistaUpdateSuit extends JFrame {
         suitNewCountry.setBounds(40, 190, 150, 30);
         updateSuitPanel.add(suitNewCountry);
 
-        newCountryTf = new JTextField("AAAAAAAAAAAAAAAA");
+        newCountryTf = new JTextField();
         newCountryTf.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         newCountryTf.setForeground(new java.awt.Color(153, 153, 153));
         newCountryTf.setBounds(40,225,250,20);
@@ -184,8 +184,7 @@ public class VistaUpdateSuit extends JFrame {
     public static String getNewSuitName(){
         return newNameTF.getText();
     }
-    
-    public static String getNewCountrySuit(){
+    public static String getNewSuitCountry(){
         return newCountryTf.getText();
     }
     public static String getNewMaterial(){

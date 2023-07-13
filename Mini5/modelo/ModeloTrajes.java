@@ -10,7 +10,7 @@ public class ModeloTrajes{
     private String countrySuitName;
     private String materialSuit;
     private int suitPrice;
-    private static ArrayList<ModeloTrajes> models = new ArrayList<ModeloTrajes>();
+    public static ArrayList<ModeloTrajes> models = new ArrayList<ModeloTrajes>();
     public String getSuitName() {
         return suitName;
     }
@@ -100,7 +100,7 @@ public class ModeloTrajes{
     public String listSuits(){
         StringBuilder result = new StringBuilder();  
         for(int i = 0; i <models.size(); i++){
-            result.append("Nombre: ").append(models.get(i).getSuitName()).append(", Pais de Fabricacion: ").append(models.get(i).getMaterialSuit()).append(", Material: ").append(models.get(i).getMaterialSuit()).append(", Precio: ").append(models.get(i).getSuitPrice());
+            result.append("Nombre: ").append(models.get(i).getSuitName()).append(", Pais de Fabricacion: ").append(models.get(i).getMaterialSuit()).append(", Material: ").append(models.get(i).getMaterialSuit()).append(", Precio: ").append(models.get(i).getSuitPrice()).append("\n");
         }
         return result.toString();
     }
@@ -121,6 +121,9 @@ public class ModeloTrajes{
         else{
            return "no encontre xd";
         }
+
+    }
+    public void addToBuy(){
 
     }
 }

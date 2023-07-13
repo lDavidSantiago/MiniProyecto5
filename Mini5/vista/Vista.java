@@ -136,6 +136,7 @@ public class Vista extends JFrame implements VistaSuits {
                 VistaListSuit.vista6.setVisible(true);
                 break;
             case 6:
+                VistaBuySuit.addCombo();
                 VistaBuySuit.vistaBuy.setVisible(true);
                 break;
 
@@ -159,7 +160,7 @@ public class Vista extends JFrame implements VistaSuits {
     public void start(Controlador controlador) {
         VistaAddSuit.addSuitButton.addActionListener(controlador);
         VistaDeleteSuit.deleteSuitButton.addActionListener(controlador);
-        VistaListSuit.listCandiesButton.addActionListener(controlador);
+        VistaListSuit.listSuitButton.addActionListener(controlador);
         VistaUpdateSuit.suitUpdateButton.addActionListener(controlador);
         VistaSearchSuit.searchSuitButton.addActionListener(controlador);
         setLocationRelativeTo(null);
@@ -211,7 +212,7 @@ public class Vista extends JFrame implements VistaSuits {
 
     @Override
     public String newSuitCountry() {
-        return VistaUpdateSuit.getNewCountrySuit();
+        return VistaUpdateSuit.getNewSuitCountry();
     }
 
     @Override
@@ -222,6 +223,10 @@ public class Vista extends JFrame implements VistaSuits {
     @Override
     public int newSuitPrice() {
         return VistaUpdateSuit.getNewSuitPrice();
+    }
+
+    public void setList(String lista){
+        VistaListSuit.listSuitsTextArea.setText(lista);
     }
     
 }
